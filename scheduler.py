@@ -93,6 +93,8 @@ def allocate(ava, indiv, priority):
 #  	3rd guy got slot 1
 #  	4th guy got no slot
 #  	5th guy got slot 4
+
+#   if one guy in the Must-make-it list die die cannot make it, then None is returned
 #  =======================
 
 availableSlots = [1,2,3,4,5] # possible slots
@@ -100,9 +102,9 @@ individualSlots = [[1],\
 					[2], \
 					[2], \
 					[1], \
-					[3]
+					[1]
 					] #    slots they can make it, 
 						#  [ [A's slots], [B's slots], ... ] 
-priorityList = [2,4] # the must-see guys
+priorityList = [2,4,5] # the must-see guys
 
 print(allocate(availableSlots, individualSlots, priorityList))
