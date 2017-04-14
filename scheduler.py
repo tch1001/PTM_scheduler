@@ -1,13 +1,14 @@
 #  ======= worst case? ========
-#  availableSlots = []
-#  individualSlots = []
-#  numPeople = 33
-#  for i in range(1,numPeople):
-#  	availableSlots.append(i)
-#  	indivSlot = []
-#  	for j in range(i,numPeople):
-#  		indivSlot.insert(0,j)
-#  	individualSlots.append(indivSlot)
+# availableSlots = []
+# individualSlots = []
+# numPeople = 33
+# for i in range(1,numPeople):
+# 	availableSlots.append(i)
+# 	indivSlot = []
+# 	for j in range(i, numPeople):
+# 		indivSlot.insert(0,j)
+# 	individualSlots.append(indivSlot)
+# print(individualSlots)
 #  ===========================
 		
 def allocate_helper(ava, indiv): # returns a list of [A's assigned slot, B's assigned slot, ...]
@@ -93,7 +94,13 @@ def allocate(ava, indiv, priority):
 #  	3rd guy got slot 1
 #  	4th guy got no slot
 #  	5th guy got slot 4
-
+#   
+#   Elimination:
+# 	=============	
+#	If not everyone's slots are satisfied, 
+#	people are removed starting from the latest submission (last in the list),
+#	excluding people from the must-make-it list
+#
 #   if one guy in the Must-make-it list die die cannot make it, then None is returned
 #  =======================
 
@@ -105,6 +112,6 @@ individualSlots = [[1],\
 					[1]
 					] #    slots they can make it, 
 						#  [ [A's slots], [B's slots], ... ] 
-priorityList = [2,4,5] # the must-see guys
+priorityList = [] # the must-see guys
 
 print(allocate(availableSlots, individualSlots, priorityList))
