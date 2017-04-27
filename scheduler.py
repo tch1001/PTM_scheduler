@@ -1,16 +1,3 @@
-#  ======= worst case? ========
-# availableSlots = []
-# individualSlots = []
-# numPeople = 33
-# for i in range(1,numPeople):
-# 	availableSlots.append(i)
-# 	indivSlot = []
-# 	for j in range(i, numPeople):
-# 		indivSlot.insert(0,j)
-# 	individualSlots.append(indivSlot)
-# print(individualSlots)
-#  ===========================
-		
 def allocate_helper(ava, indiv): # returns a list of [A's assigned slot, B's assigned slot, ...]
 							# returns None if not possible
 	if len(indiv) == 0: # if no people needed to allocate
