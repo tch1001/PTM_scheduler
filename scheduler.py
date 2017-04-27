@@ -53,13 +53,15 @@ def filterBitmask(priority, bitmask): # gets rid of all bitmasks with Nth bit on
 		if add: # if can add
 			ret.append(bitmask[i]) # add to filtered bitmasks
 	return ret;
-		
+
 			
 def allocate(ava, indiv, priority):
+
+	priority.sort()
 	ava.sort()
 	for i in indiv:
 		i.sort()  # sorts to increase efficiency (from O(n!) to unknown?)
-	
+		
 	ret = allocate_helper(ava, indiv) # first attempt, no change to people
 	
 	#  if impossible, 
@@ -80,7 +82,10 @@ def allocate(ava, indiv, priority):
 						ret.insert(k, -1) # place -1 in positions that were removed
 				return ret; # yay
 	
-	return ret;
+	if ret == None: #if priority list, one of them cannot make it
+		return allocate(ava, indiv, []) #dont care about the priority list alr
+
+	return ret
 	
 	
 #  ==== documentation ====
@@ -101,17 +106,18 @@ def allocate(ava, indiv, priority):
 #	people are removed starting from the latest submission (last in the list),
 #	excluding people from the must-make-it list
 #
-#   if one guy in the Must-make-it list die die cannot make it, then None is returned
+#   if all the people in the must-make-it list still cannot be satisfied, some in the must-make-it list would have
+#   no choice but to forfeit going (not given a slot)
 #  =======================
 
 availableSlots = [1,2,3,4,5] # possible slots
 individualSlots = [[1],\
+					[3], \
 					[2], \
-					[2], \
-					[1], \
+					[3], \
 					[1]
 					] #    slots they can make it, 
 						#  [ [A's slots], [B's slots], ... ] 
-priorityList = [] # the must-see guys
+priorityList = [1,3,5] # the must-see guys
 
 print(allocate(availableSlots, individualSlots, priorityList))
