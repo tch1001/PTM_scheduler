@@ -97,14 +97,15 @@ def allocate(ava, indiv, priority):
 #   no choice but to forfeit going (not given a slot)
 #  =======================
 
-availableSlots = [1,2,3,4,5] # possible slots
-individualSlots = [[1],\
-					[3], \
-					[2], \
-					[3], \
-					[1]
-					] #    slots they can make it, 
-						#  [ [A's slots], [B's slots], ... ] 
-priorityList = [1,3,5] # the must-see guys
-
-print(allocate(availableSlots, individualSlots, priorityList))
+if __name__ == "__main__":
+	availableSlots = [1,2,3,4,5] # possible slots
+	individualSlots = [[1],\
+						[3], \
+						[2], \
+						[3], \
+							[1]
+						] #    slots they can make it, 
+							#  [ [A's slots], [B's slots], ... ] 
+	priorityList = [1,3,5] # the must-see guys
+	
+	print(allocate(availableSlots, individualSlots, priorityList))	
