@@ -59,38 +59,6 @@ def allocate(slots, choices, find = 1, done = []):
 
 
     return ans
-
-    # peopleWithThisSlot = [j for j in choices if find in j[1]]
-    # for j in range(len(peopleWithThisSlot)):
-    #     if peopleWithThisSlot[j] in done:
-    #         continue
-    #
-    #     done.append(peopleWithThisSlot[j])
-    #
-    #     ret = allocate(slots[1:], choices, find+1, done)
-    #     if ret != None:
-    #         print(ret)
-    #         ret.append((peopleWithThisSlot[j], find))
-    #         if len(ret) > len(ans):
-    #             ans = ret
-    #
-    #     for k in range(j+1,len(peopleWithThisSlot)):
-    #         if peopleWithThisSlot[k] in done:
-    #             continue
-    #         # print(i, ":", peopleWithThisSlot[j], peopleWithThisSlot[k])
-    #         # print('meow')
-    #         done.append(peopleWithThisSlot[k])
-    #         ret = allocate(slots[1:], choices, find+1, done)
-    #         if ret != None:
-    #             print(ret)
-    #             # print('mew')
-    #             ret.append((peopleWithThisSlot[k], find))
-    #             if len(ret) > len(ans):
-    #                 ans = ret
-    #         done = done[:-1]
-    #     done = done[:-1]
-    # return ans
-        # print(i,":",peopleWithThisSlot)
 	
 
 slots = []
